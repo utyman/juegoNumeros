@@ -189,8 +189,8 @@ public class SimpleStrategy implements Strategy {
 			break;
 		case FINAL_PERMUTATION:
 			if (info[0] > regularsFinal) {
-				if (info[0] == regularsFinal + 2)
-					updateSolution(finalPermutationString, guess);
+	//			if (info[0] == regularsFinal + 2)
+	//(finalPermutationString, guess);
 				finalPermutationString = guess;
 				regularsFinal = info[0];
 			}
