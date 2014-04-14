@@ -189,11 +189,20 @@ public class SimpleStrategy implements Strategy {
 			break;
 		case FINAL_PERMUTATION:
 			if (info[0] > regularsFinal) {
+				if (info[0] == regularsFinal + 2)
+					updateSolution(finalPermutationString, guess);
 				finalPermutationString = guess;
-				
+				regularsFinal = info[0];
 			}
 				
 		default:
+		}
+	}
+
+	private void updateSolution(String finalPermutationString, String guess) {
+		for (int i = 0; i < dim; i++) {
+			if (finalPermutationString.charAt(i) != guess.charAt(i))
+				solution[i] = 1;
 		}
 	}
 
@@ -210,7 +219,6 @@ public class SimpleStrategy implements Strategy {
 					solutionToImprove.substring(improvedIndex + 1, solutionToImprove.length());
 			break;
 		case FINAL_PERMUTATION:
-			System.out.println("FINAL");
 			guess = obtainFinalGuess();
 			break;		
 		default:
