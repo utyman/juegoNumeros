@@ -210,6 +210,7 @@ public class SimpleStrategy implements Strategy {
 					solutionToImprove.substring(improvedIndex + 1, solutionToImprove.length());
 			break;
 		case FINAL_PERMUTATION:
+			System.out.println("FINAL");
 			guess = obtainFinalGuess();
 			break;		
 		default:
@@ -272,6 +273,9 @@ public class SimpleStrategy implements Strategy {
 				
 				if (regulars + irregulars == dim) {
 					state = State.FINAL_PERMUTATION;
+					for (int i = 0; i < dim; i++) {
+						solution[i] = 0;
+					}
 					finalPermutationString = solutionToImprove;
 				}
 			}

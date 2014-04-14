@@ -43,8 +43,9 @@ public class AppTest
 		try {
 			SimpleStrategy strat = new SimpleStrategy(4, "123456789");
 			String correct = AlphabetUtils.shuffle("123456789").substring(0,4);
+			System.out.println("Adivina: " + correct);
 			int i = 1;
-			while(true) {
+			for (int j = 0; j < 50; j++) {
 				
 				String guess = strat.guess();
 				System.out.println("Intento: " + i);
